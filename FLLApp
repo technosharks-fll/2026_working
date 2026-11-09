@@ -1,0 +1,10 @@
+FLL app first prompt
+
+#new 
+Problem: We want to help the keystone species to save the environment by creating an app - the problem is that the keystone species population is going down and if they go extinct then the entire eco system will also get affected
+
+So, I want to create an app that tracks your gps location and uses the location to find the keystone species in your area
+the most endangered keystone species will be at the top and you will also get to see more information about the keystone species
+you'll also get to report, which means you can send a report if you see someone poaching or hurting the habitat
+you can place a report by filling out details about the keystone species, what is happening and submit it to database
+using the amount of reports that are in the database, your app can make news like "people are poaching these species too much, and hurting the environment"
