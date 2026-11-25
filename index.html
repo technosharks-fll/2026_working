@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f1" />
+    <meta
+      name="description"
+      content="Discover vulnerable wildlife, grow native plants, and take local conservation action."
+    />
+    <title>Rooted — small actions, living ecosystems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#" data-view="overview" aria-label="Rooted home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 26V13m0 7c-5 0-8-3-8-8 5 0 8 3 8 8Zm0-4c0-5 3-8 8-8 0 5-3 8-8 8Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 26h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">rooted<span>.</span></span>
+        </a>
+
+        <div class="nav-label">YOUR FIELD GUIDE</div>
+        <nav class="primary-nav">
+          <button class="nav-item active" data-view="overview">
+            <span class="nav-icon" aria-hidden="true">⌂</span> Overview
+          </button>
+          <button class="nav-item" data-view="wildlife">
+            <span class="nav-icon" aria-hidden="true">◉</span> Wildlife
+          </button>
+          <button class="nav-item" data-view="garden">
+            <span class="nav-icon" aria-hidden="true">❋</span> Native garden
+          </button>
+          <button class="nav-item" data-view="action">
+            <span class="nav-icon" aria-hidden="true">♡</span> Take action
+          </button>
+          <button class="nav-item" data-view="identify">
+            <span class="nav-icon" aria-hidden="true">⌕</span> Plant scanner
+          </button>
+          <button class="nav-item" data-view="reports">
+            <span class="nav-icon" aria-hidden="true">↗</span> Field reports
+            <span class="nav-count" id="report-nav-count">0</span>
+          </button>
+          <button class="nav-item" data-view="community">
+            <span class="nav-icon" aria-hidden="true">♡</span> Sightings & Q&A
+          </button>
+          <button class="nav-item" data-view="seeds">
+            <span class="nav-icon" aria-hidden="true">♧</span> Seed exchange
+          </button>
+          <button class="nav-item" data-view="learn">
+            <span class="nav-icon" aria-hidden="true">✳</span> Learn & earn
+          </button>
+          <button class="nav-item" data-view="feedback">
+            <span class="nav-icon" aria-hidden="true">↗</span> Feedback
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="impact-mini">
+            <span class="impact-mini-icon" aria-hidden="true">✿</span>
+            <div>
+              <strong><span id="sidebar-points">0</span> points</strong>
+              <span>Every action takes root.</span>
+            </div>
+          </div>
+          <div class="sidebar-note">Made for the places<br />we call home <span>♥</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark" aria-hidden="true">✿</span> rooted<span>.</span></div>
+          <div class="topbar-note"><span class="live-dot"></span> Your local nature, in focus</div>
+          <button class="location-button" id="location-button">
+            <span aria-hidden="true">⌖</span>
+            <span id="location-label">Pacific Northwest</span>
+            <span class="location-chevron" aria-hidden="true">⌄</span>
+          </button>
+        </header>
+
+        <div class="view-container">
+          <section class="view active" id="view-overview" aria-labelledby="welcome-title">
+            <div class="welcome-row">
+              <div>
+                <p class="eyebrow"><time id="today-date"></time> <span class="eyebrow-separator">/</span> YOUR LOCAL FIELD GUIDE</p>
+                <h1 id="welcome-title">A little more <span>wild</span> starts here.</h1>
+                <p class="welcome-copy">Get to know the species that keep your ecosystem thriving — and discover small ways to help them.</p>
+              </div>
+              <div class="streak-pill"><span aria-hidden="true">✦</span><strong id="points-display">0</strong> points earned</div>
+            </div>
+
+            <section class="hero-card" aria-label="Explore local wildlife">
+              <div class="hero-content">
+                <span class="hero-kicker"><span class="hero-kicker-dot"></span> YOUR ECOSYSTEM, UP CLOSE</span>
+                <h2>Every species has<br />a part to play.</h2>
+                <p>Meet the keystone species shaping the wild places around you.</p>
+                <button class="button button-light" data-view="wildlife">Explore local wildlife <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="hero-art" aria-hidden="true">
+                <div class="hero-sun"></div>
+                <div class="hero-hill hero-hill-back"></div>
+                <div class="hero-hill hero-hill-front"></div>
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+                <div class="hero-creature">✿</div>
+                <div class="hero-art-label">one small thing<br />can change everything</div>
+              </div>
+            </section>
+
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">A CLOSER LOOK</p>
+                <h2>Meet your local keystone species</h2>
+              </div>
+              <button class="text-link" data-view="wildlife">View all <span aria-hidden="true">→</span></button>
+            </div>
+            <div class="species-grid" id="overview-species"></div>
+
+            <div class="section-heading garden-heading">
+              <div>
+                <p class="eyebrow">GROW WHERE YOU ARE</p>
+                <h2>Native plants for your patch</h2>
+              </div>
+              <button class="text-link" data-view="garden">Explore the garden <span aria-hidden="true">→</span></button>
+            </div>
+            <div class="garden-preview" id="overview-plants"></div>
+
+            <div class="bottom-grid">
+              <article class="weather-card">
+                <div class="weather-icon" aria-hidden="true">☼</div>
+                <div class="weather-copy">
+                  <span class="eyebrow">PLANTING CONDITIONS</span>
+                  <h3 id="weather-title">A good time to plan ahead</h3>
+                  <p id="weather-copy">Native seeds and fall planting tips are ready for your region.</p>
+                  <button class="text-link" data-view="garden">See seasonal tips <span aria-hidden="true">→</span></button>
+                </div>
+                <span class="weather-decoration" aria-hidden="true">✳</span>
+              </article>
+              <article class="community-card">
+                <div class="community-heading">
+                  <span class="community-icon" aria-hidden="true">⌁</span>
+                  <span class="eyebrow">COMMUNITY SIGNAL</span>
+                </div>
+                <h3 id="community-title">Every observation matters.</h3>
+                <p id="community-copy">Share a careful field report to help your community notice changes in local habitats.</p>
+                <button class="text-link" data-view="reports">Explore field reports <span aria-hidden="true">→</span></button>
+                <span class="community-leaves" aria-hidden="true">〰</span>
+              </article>
+            </div>
+            <footer class="page-footer">Rooted is a community conservation prototype. Verify urgent wildlife concerns with local authorities. Forecasts by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>; place names © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>.</footer>
+          </section>
+
+          <section class="view" id="view-wildlife" aria-labelledby="wildlife-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">THE NEIGHBORS THAT HOLD IT ALL TOGETHER</p>
+              <h1 id="wildlife-title">Wildlife worth knowing.</h1>
+              <p>Keystone species have an outsized role in keeping ecosystems healthy. Explore a demo field guide for your selected region.</p>
+            </div>
+            <div class="notice-banner"><span aria-hidden="true">ⓘ</span><span>Conservation status and ranges vary by population. These examples are educational and should be checked against current local and scientific sources.</span></div>
+            <div class="filter-row">
+              <span class="filter-label">SORTED BY CONSERVATION CONCERN</span>
+              <button class="button button-outline" data-manage="species">Manage species</button>
+            </div>
+            <div class="species-list" id="wildlife-list"></div>
+            <div class="section-heading"><div><p class="eyebrow">POPULATION NOTES</p><h2>What we know, and what needs checking</h2></div></div>
+            <p class="population-note">Population figures depend on the species, population, survey method, and year. This prototype does not invent counts; follow each agency source and its latest monitoring update.</p>
+            <div class="section-heading"><div><p class="eyebrow">GROWING TOGETHER</p><h2>Species sightings & questions</h2></div><button class="text-link" data-view="community">Share a sighting or question →</button></div>
+            <div class="community-feed" id="species-community-feed"></div>
+          </section>
+
+          <section class="view" id="view-garden" aria-labelledby="garden-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">PUT DOWN ROOTS, MAKE ROOM FOR WILDLIFE</p>
+              <h1 id="garden-title">A garden that belongs here.</h1>
+              <p>Native plants support local food webs and are adapted to regional conditions. Start with one plant that fits your space.</p>
+            </div>
+            <div class="garden-callout">
+              <div class="garden-callout-icon" aria-hidden="true">✿</div>
+              <div><span class="eyebrow">A NOTE ON SEEDS</span><h2>Choose locally sourced, native seed.</h2><p>Look for reputable regional native-plant nurseries. Avoid collecting seeds from wild populations unless you have permission.</p></div>
+            </div>
+            <div class="filter-row"><span class="filter-label">LOCAL NATIVE-PLANT FIELD GUIDE</span><button class="button button-outline" data-manage="plants">Manage plants</button></div>
+            <div class="plant-grid" id="plant-list"></div>
+            <div class="section-heading"><div><p class="eyebrow">PLANT SIGHTINGS & QUESTIONS</p><h2>What is growing near you?</h2></div><button class="text-link" data-view="community">Share a sighting or question →</button></div>
+            <div class="community-feed" id="plant-community-feed"></div>
+            <div class="weather-detail">
+              <div class="weather-icon" aria-hidden="true">☼</div>
+              <div><span class="eyebrow">WEATHER-AWARE GARDENING</span><h2 id="garden-weather-title">Plant for the season, not just the forecast.</h2><p id="garden-weather-copy">Use the local forecast as a guide, then follow seed-packet instructions and regional planting calendars. Allow soil to drain and avoid planting in extreme heat or before a hard frost.</p></div>
+              <button class="button button-outline" id="weather-button">Check local forecast</button>
+            </div>
+          </section>
+
+          <section class="view" id="view-action" aria-labelledby="action-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">SMALL CHANGES, REAL HABITAT</p>
+              <h1 id="action-title">Ways to help from home.</h1>
+              <p>Turn yards, balconies, gardens, and community spaces into safer places for wildlife. Choose an action that fits your space and local conditions.</p>
+            </div>
+
+            <div class="action-feature">
+              <div class="action-feature-icon" aria-hidden="true">✿</div>
+              <div>
+                <span class="eyebrow">MAKE ROOM FOR POLLINATORS</span>
+                <h2>Plant for the whole pollinator community.</h2>
+                <p>Pollinators include bees, butterflies, moths, beetles, flies, wasps, hummingbirds, and bats. Provide a mix of native flowers, nesting areas, clean water, and bloom across the seasons.</p>
+              </div>
+            </div>
+
+            <div class="action-grid">
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">❋</span>
+                <h2>Plant native flowers</h2>
+                <p>Choose locally native species and a variety of flower shapes and colors. Avoid plant material treated with neonicotinoids or other systemic pesticides.</p>
+                <button class="text-link" data-view="garden">Browse native plants →</button>
+              </article>
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">⌁</span>
+                <h2>Provide nesting places</h2>
+                <p>Leave patches of bare soil, standing stems, leaf litter, and brush when safe and appropriate. Keep bird, bat, and insect homes out of direct disturbance.</p>
+              </article>
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">≈</span>
+                <h2>Add clean water</h2>
+                <p>Use a shallow dish with stones or twigs for insects and small wildlife. Refresh and clean it regularly to prevent mosquitoes and disease.</p>
+              </article>
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">◌</span>
+                <h2>Leave the leaves</h2>
+                <p>Many caterpillars, insects, and fungi overwinter in leaf litter and standing stems. Remove only what creates a documented safety, fire, or disease risk.</p>
+              </article>
+            </div>
+
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">AVOID HARMFUL CHEMICALS</p>
+                <h2>Pesticides can affect more than the target pest.</h2>
+              </div>
+            </div>
+            <div class="action-warning">
+              <span class="action-warning-icon" aria-hidden="true">!</span>
+              <p><strong>Before using a pesticide or herbicide:</strong> identify the problem, remove the cause where possible, and try non-chemical options first. Broad and systemic chemicals can poison pollinators, birds, pets, aquatic life, and soil organisms, and residues can move through water or food webs. Follow every label and local restriction, avoid treating flowering plants and active pollinator areas, and never apply more or closer than the label allows.</p>
+            </div>
+
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">CHANGE THE LANDSCAPE</p>
+                <h2>Replace lawn, one patch at a time.</h2>
+              </div>
+            </div>
+            <div class="action-grid">
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">♧</span>
+                <h2>Create a native garden</h2>
+                <p>Start with a small sunny or shady bed, group plants by water needs, and replace turf gradually. Local native-plant societies can help with species and sourcing.</p>
+              </article>
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">☼</span>
+                <h2>Try xeriscaping</h2>
+                <p>Xeriscaping means thoughtful low-water landscaping—not covering everything in gravel. Improve soil, mulch, use efficient irrigation, and choose climate-appropriate native or adapted plants.</p>
+              </article>
+              <article class="action-card">
+                <span class="action-card-icon" aria-hidden="true">↯</span>
+                <h2>Save water and soil</h2>
+                <p>Catch and slow rainwater where allowed, keep mulch around plants, and reduce water runoff. Irrigate deeply and only as needed, especially before dry or hot weather.</p>
+              </article>
+            </div>
+
+            <div class="action-checklist">
+              <span class="eyebrow">CHOOSE ONE THIS WEEK</span>
+              <ul>
+                <li>Plant one locally native, pollinator-supporting species.</li>
+                <li>Stop mowing or spraying one safe patch to let habitat grow.</li>
+                <li>Replace a small section of lawn with mulch and native plants.</li>
+                <li>Add a regularly cleaned shallow water source.</li>
+                <li>Ask a local garden center to label native and pesticide-free plants.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="view" id="view-feedback" aria-labelledby="feedback-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">HELP SHAPE ROOTED</p>
+              <h1 id="feedback-title">Share your feedback.</h1>
+              <p>Tell us what is useful, what needs improvement, and what you would like to see added.</p>
+            </div>
+            <div class="feedback-layout">
+              <div class="feedback-card">
+                <div class="feedback-qr-wrap">
+                  <img class="feedback-qr" src="feedback-qr.png" alt="QR code for the Rooted app feedback form" />
+                </div>
+                <div class="feedback-copy">
+                  <span class="eyebrow">SCAN FROM YOUR PHONE</span>
+                  <h2>Open the feedback form</h2>
+                  <p>Use your phone camera to scan the QR code. It opens the Google form where you can submit feedback.</p>
+                  <button class="button button-primary" id="feedback-print">Print QR code <span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="view-identify" aria-labelledby="identify-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">NOTICE SOMETHING GROWING?</p>
+              <h1 id="identify-title">Take a closer look.</h1>
+              <p>Add a plant photo and compare it with this regional field guide. Photo identification is not powered in this prototype.</p>
+            </div>
+            <div class="scanner-layout">
+              <div class="scanner-card">
+                <input id="plant-photo" type="file" accept="image/*" capture="environment" hidden />
+                <button class="photo-drop" id="photo-drop" type="button" aria-label="Choose or take a plant photo">
+                  <span class="photo-placeholder" id="photo-placeholder"><span class="camera-icon" aria-hidden="true">⌗</span><strong>Tap to add a plant photo</strong><span>Take a picture or choose one from your device</span></span>
+                  <img id="photo-preview" alt="Your selected plant photo" hidden />
+                </button>
+                <div class="scanner-foot"><span>◇ Your photo stays on this device.</span><button class="button button-primary" id="compare-button" disabled>Compare with field guide <span aria-hidden="true">→</span></button></div>
+                <p class="scanner-disclaimer">This tool does not identify a plant from its photo. Use the guide below to compare visible features, and consult a local expert before eating, handling, or removing an unfamiliar plant.</p>
+                <div id="scan-result" class="scan-result" role="status" hidden></div>
+              </div>
+              <aside class="scanner-aside">
+                <span class="eyebrow">HOW TO OBSERVE</span>
+                <h2>Look at more than a leaf.</h2>
+                <ul>
+                  <li><span>01</span> Notice leaves, stems, flowers, and fruit.</li>
+                  <li><span>02</span> Check the whole plant and where it is growing.</li>
+                  <li><span>03</span> Compare several features with a trusted guide.</li>
+                </ul>
+                <button class="text-link" data-view="garden">Browse native plant profiles <span aria-hidden="true">→</span></button>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="view-reports" aria-labelledby="reports-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">NOTICE IT. NOTE IT. HELP PROTECT IT.</p>
+              <h1 id="reports-title">Field notes from the community.</h1>
+              <p>Record an observation to help people notice patterns. Reports are unverified and are not an emergency service.</p>
+            </div>
+            <div class="report-layout">
+              <form class="report-form" id="report-form">
+                <div class="form-heading"><span class="eyebrow">ADD A FIELD REPORT</span><h2>What did you notice?</h2></div>
+                <label for="report-species">Species or habitat</label>
+                <select id="report-species" name="species" required></select>
+                <label for="report-type">What happened?</label>
+                <select id="report-type" name="type" required>
+                  <option value="">Choose an observation</option>
+                  <option>Possible habitat disturbance</option>
+                  <option>Wildlife in distress</option>
+                  <option>Possible poaching or illegal activity</option>
+                  <option>Invasive plant observed</option>
+                  <option>Other conservation concern</option>
+                </select>
+                <label for="report-severity">Severity <span class="label-optional">— for triage only</span></label>
+                <select id="report-severity" name="severity" required>
+                  <option value="">Choose a severity</option>
+                  <option value="low">Low — no immediate harm observed</option>
+                  <option value="moderate">Moderate — potential ongoing impact</option>
+                  <option value="high">High — serious or active impact</option>
+                  <option value="critical">Critical — immediate threat to life or safety</option>
+                </select>
+                <label for="report-city">Town or city <span class="label-optional">— do not share an exact sensitive wildlife location</span></label>
+                <input id="report-city" name="city" maxlength="80" placeholder="Town or city (optional)" />
+                <label for="report-details">Details <span class="label-optional">— no names or identifying details</span></label>
+                <textarea id="report-details" name="details" rows="4" maxlength="400" placeholder="What did you see? Include only details that are safe and appropriate to share." required></textarea>
+                <div class="form-bottom"><span>Reports are saved on this device in this demo.</span><button class="button button-primary" type="submit">Submit report <span aria-hidden="true">→</span></button></div>
+                <div class="form-error" id="report-error" role="alert" hidden></div>
+              </form>
+              <aside class="report-side">
+                <div class="report-safety"><span class="safety-icon" aria-hidden="true">!</span><div><h3>See immediate danger?</h3><p>Do not approach or confront anyone. Contact local emergency services or the appropriate wildlife agency.</p></div></div>
+                <div class="signal-card"><span class="eyebrow">COMMUNITY SIGNAL</span><strong id="report-total">0</strong><p>reports submitted on this device</p><div class="signal-rule"></div><p id="report-insight">A single report is a note, not a confirmed trend. More observations can help point people toward questions to investigate.</p><span class="unverified-label">UNVERIFIED COMMUNITY REPORTS</span></div>
+              </aside>
+            </div>
+            <div class="section-heading report-history-heading"><div><p class="eyebrow">YOUR NOTES</p><h2>Recent field reports</h2></div></div>
+            <div id="report-history" class="report-history"></div>
+            <div class="section-heading"><div><p class="eyebrow">REVIEW QUEUE</p><h2>Reports needing a human look</h2></div></div>
+            <div class="notice-banner"><span aria-hidden="true">ⓘ</span><span>Automated checks can flag possible duplicates or spam, but cannot determine whether a wildlife report is true. No report is automatically labeled genuine or fake. AI review needs a secure server and human oversight.</span></div>
+            <div id="report-review-queue" class="report-history"></div>
+          </section>
+
+          <section class="view" id="view-community" aria-labelledby="community-page-title" hidden>
+            <div class="page-intro"><p class="eyebrow">NOTICE NATURE, SHARE RESPONSIBLY</p><h1 id="community-page-title">Sightings & questions.</h1><p>Share a wildlife or native-plant sighting, ask a question, or learn how to observe safely. Posts are local demo entries, not verified identifications.</p></div>
+            <div class="notice-banner"><span aria-hidden="true">!</span><span>Keep your distance. Never approach, feed, touch, or reveal the precise location of sensitive wildlife. Do not trespass. Report immediate danger to the appropriate local authorities.</span></div>
+            <form class="report-form community-form" id="community-form">
+              <div class="form-heading"><span class="eyebrow">COMMUNITY FIELD NOTE</span><h2>What have you noticed?</h2></div>
+              <label for="community-kind">Post type</label><select name="kind" id="community-kind" required><option value="sighting">Wildlife sighting</option><option value="plant">Plant sighting</option><option value="question">Ask a question</option></select>
+              <label for="community-subject">Species or topic</label><select name="subject" id="community-subject" required></select>
+              <label for="community-city">Town or city</label><input id="community-city" name="city" maxlength="80" placeholder="Optional; broad location only" />
+              <label for="community-text">Your note</label><textarea id="community-text" name="text" rows="3" maxlength="400" required placeholder="What did you see, or what would you like to know?"></textarea>
+              <div class="form-bottom"><span>No exact locations or personal details, please.</span><button class="button button-primary" type="submit">Share field note →</button></div>
+              <div class="form-error" id="community-error" role="alert" hidden></div>
+            </form>
+            <div class="section-heading"><div><p class="eyebrow">LOCAL COMMUNITY</p><h2>Recent sightings & questions</h2></div></div>
+            <div class="community-feed" id="community-feed"></div>
+            <div class="section-heading"><div><p class="eyebrow">WILDLIFE SAFETY</p><h2>Observe from a respectful distance</h2></div></div>
+            <div class="safety-grid">
+              <article class="safety-tip"><h3>Give animals space</h3><p>Use binoculars or a zoom lens. If an animal changes its behavior, you are too close—back away calmly.</p></article>
+              <article class="safety-tip"><h3>Protect sensitive places</h3><p>Do not publish nests, dens, rare-plant locations, or exact coordinates. Respect closures and private property.</p></article>
+              <article class="safety-tip"><h3>Ask before identifying</h3><p>Photos and community guesses are not confirmed identifications. Consult local experts and trusted field guides.</p></article>
+            </div>
+          </section>
+
+          <section class="view" id="view-seeds" aria-labelledby="seeds-title" hidden>
+            <div class="page-intro"><p class="eyebrow">SHARE SEEDS. GROW LOCAL HABITAT.</p><h1 id="seeds-title">A little seed goes a long way.</h1><p>Find a community pickup point, use learning points for a seed packet, or offer locally appropriate seed to a verified organizer.</p></div>
+            <div class="points-level-card"><div><span class="eyebrow">YOUR CONSERVATION LEVEL</span><h2 id="level-name">Nature Newcomer</h2><p id="level-copy">Every bit of learning helps a habitat grow.</p></div><div class="level-score"><strong id="seed-points">0</strong><span>points</span></div><div class="level-progress"><span id="level-progress"></span></div><small id="level-next"></small></div>
+            <div class="seed-location-card"><div><span class="eyebrow">NEARBY PICKUP POINTS</span><h2 id="seed-location-title">Community seed shelves</h2><p id="seed-location-copy">Example locations only. Confirm availability and opening hours with the host before traveling.</p></div><button class="button button-outline" id="seed-location-button">Use my town</button></div>
+            <div class="pickup-grid" id="pickup-list"></div>
+            <div class="section-heading"><div><p class="eyebrow">EARNED BY LEARNING</p><h2>Redeem a native seed packet</h2></div></div>
+            <div class="redemption-card"><div class="plant-swatch" aria-hidden="true">✿</div><div><h3>One locally sourced seed packet</h3><p>Choose an eligible packet from the sample list. Points and stock are only simulated here; no seeds are reserved or shipped.</p><span class="seed-cost">100 points</span></div><button class="button button-primary" id="redeem-seeds">Redeem 100 points</button></div>
+            <div class="section-heading"><div><p class="eyebrow">COMMUNITY SEED SHELF</p><h2>Offer seeds or volunteer a pickup spot</h2></div></div>
+            <form class="report-form seed-form" id="seed-form"><div class="seed-form-grid">
+              <div><label for="seed-offer">Seed or plant</label><input id="seed-offer" name="offer" maxlength="100" required placeholder="e.g. locally sourced wildflower mix" /></div>
+              <div><label for="seed-town">Town or city</label><input id="seed-town" name="city" maxlength="80" required placeholder="Town or city" /></div>
+              <div><label for="seed-point">Pickup point or organization</label><input id="seed-point" name="pickup" maxlength="120" required placeholder="Community garden, library, etc." /></div>
+              <div><label for="seed-quantity">Quantity / notes</label><input id="seed-quantity" name="quantity" maxlength="100" placeholder="Optional" /></div>
+            </div><div class="form-bottom"><span>Only offer seeds you can identify and source responsibly.</span><button class="button button-primary" type="submit">Add seed offer →</button></div><div class="form-error" id="seed-error" role="alert" hidden></div></form>
+            <div id="seed-offers" class="pickup-grid"></div>
+            <div class="donation-card"><div class="donation-icon">♥</div><div><span class="eyebrow">SUPPORT ROOTED</span><h2>Help keep the project growing.</h2><p>Payments are not set up in this demo. A real donation option needs a secure payment provider and a transparent nonprofit or project operator.</p></div><button class="button button-outline" id="donate-button">Donation setup info</button></div>
+          </section>
+
+          <section class="view" id="view-learn" aria-labelledby="learn-title" hidden>
+            <div class="page-intro">
+              <p class="eyebrow">CURIOSITY IS A CONSERVATION TOOL</p>
+              <h1 id="learn-title">Learn a little. Do a little.</h1>
+              <p>Answer a quick question, earn points, and build your local nature knowledge.</p>
+            </div>
+            <div class="quiz-layout">
+              <div class="quiz-card">
+                <div class="quiz-top"><span class="quiz-badge">✳ FIELD QUIZ</span><span class="quiz-reward">+20 points</span></div>
+                <p class="eyebrow" id="quiz-step">QUESTION 01 / ECOSYSTEMS</p>
+                <h2 id="quiz-question">Why are keystone species important?</h2>
+                <div class="quiz-options" id="quiz-options">
+                  <button class="quiz-option" data-answer="a">They are always the most numerous species.</button>
+                  <button class="quiz-option" data-answer="b">They have a particularly strong effect on the ecosystem around them.</button>
+                  <button class="quiz-option" data-answer="c">They only live in protected areas.</button>
+                </div>
+                <div id="quiz-feedback" class="quiz-feedback" role="status" hidden></div>
+                <button class="button button-primary quiz-submit" id="quiz-submit">Check my answer <span aria-hidden="true">→</span></button>
+              </div>
+              <aside class="quiz-aside"><div class="quiz-aside-art" aria-hidden="true">✿</div><span class="eyebrow">YOUR IMPACT</span><h2 id="quiz-points-title">Your actions add up.</h2><p>Points are a playful nudge to keep learning. They live on this device and are not redeemable rewards.</p><div class="points-total"><span id="quiz-points">0</span><span>points earned</span></div><div class="points-progress"><span id="points-progress-fill"></span></div><small id="points-next">Answer a quiz to earn your first 20 points.</small></aside>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <dialog id="manage-dialog" class="manage-dialog"><form id="manage-form" method="dialog"><div class="form-heading"><span class="eyebrow" id="manage-eyebrow">FIELD GUIDE EDITOR</span><h2 id="manage-title">Edit field guide entry</h2></div><div id="manage-fields" class="manage-fields"></div><div class="form-bottom"><button class="button button-outline" value="cancel">Cancel</button><button class="button button-primary" id="manage-save" value="save">Save changes</button></div><div class="form-error" id="manage-error" role="alert" hidden></div></form></dialog>
+    <dialog id="location-dialog" class="manage-dialog location-dialog">
+      <form id="location-form" method="dialog">
+        <div class="form-heading"><span class="eyebrow">YOUR LOCAL FIELD GUIDE</span><h2>Choose your town or city</h2></div>
+        <label for="location-search">Search for a place</label>
+        <input id="location-search" name="location" maxlength="100" placeholder="e.g. Portland, Oregon" required />
+        <div class="form-bottom"><button class="button button-outline" id="location-gps" type="button">Use GPS</button><button class="button button-primary" value="search">Find this place</button></div>
+        <div class="form-error" id="location-error" role="alert" hidden></div>
+        <p class="scanner-disclaimer">Your precise GPS coordinates are used only to look up a nearby town and forecast in this demo; they are not added to public field reports.</p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
